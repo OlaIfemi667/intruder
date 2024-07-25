@@ -1,10 +1,10 @@
-# 🌟 PENTEST-AI 🌟
+# 🌟 INTRUDER 🌟
 
-Bienvenue dans **PENTEST-AI**, un outil puissant conçu pour vous assister dans les phases d'un test d'intrusion (pentest). 
+Bienvenue dans **INTRUDER**, un outil puissant conçu pour vous assister dans les phases d'un test d'intrusion (pentest). 
 
 ## 🚀 Description
 
-**PENTEST-AI** est capable de vous aider lors des différentes phases d'un pentest grâce à ses deux composants principaux :
+**INTRUDER** est capable de vous aider lors des différentes phases d'un pentest grâce à ses deux composants principaux :
 
 1. **Phase Passive** 🕵️‍♂️
     - Analyse et propose des schémas de tests.
@@ -18,7 +18,7 @@ Bienvenue dans **PENTEST-AI**, un outil puissant conçu pour vous assister dans 
 
 ## 🧠 Technologie Utilisée
 
-Pour le moment, **PENTEST-AI** utilise **LLaMA3:8B**. Notez que **LLaMA3** n'a pas encore été spécifiquement fine-tuné pour les pentests.
+Pour le moment, **INTRUDER** utilise **LLaMA3:8B**. Notez que **LLaMA3** n'a pas encore été spécifiquement fine-tuné pour les pentests.
 
 Le projet utilise également les technologies suivantes :
 - **C++** : Pour les performances et l'efficacité dans les tâches critiques.
@@ -38,11 +38,11 @@ Le projet utilise également les technologies suivantes :
 
 ## 🛠️ Installation
 
-Pour installer **PENTEST-AI**, suivez les étapes ci-dessous :
+Pour installer **INTRUDER**, suivez les étapes ci-dessous :
 
 ```bash
-git clone https://github.com/OlaIfemi667/pentest-ai.git
-cd pentest-ai
+git clone https://github.com/OlaIfemi667/intruder.git
+cd intruder
 pip install -r requirements.txt
 ```
 
@@ -51,5 +51,5 @@ pip install -r requirements.txt
 Pour utiliser PENTEST-AI, exécutez simplement :
 
 ```bash
-python pentest-ai.py
+./intruder.py
 ```
