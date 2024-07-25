@@ -26,9 +26,10 @@ Le projet est fait en python
 
 ## 🎯 Fonctionnalités
 
-- **Analyse Passive** : Collecte d'informations et planification stratégique.
-- **Actions Actives** : Exécution des tests et exploitation des vulnérabilités identifiées.
-- **Feedback en Temps Réel** : Analyse continue des résultats pour ajustement instantané.
+- **from prompt to action ** : interprète les demandes de l'utilisateur en action (exécuter un commandes)
+- **executer une commandes** : exécuter au besoin une commande par soit même 
+- **echanger avec intruder** : vous pouvez poser des questions
+- **faire un résumé de votre session** : 
 
 ---
 
