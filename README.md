@@ -26,7 +26,7 @@ Le projet est fait en python
 
 ## 🎯 Fonctionnalités
 
-- **from prompt to action ** : interprète les demandes de l'utilisateur en action (exécuter un commandes)
+- **from prompt to action** : interprète les demandes de l'utilisateur en action (exécuter un commandes)
 - **executer une commandes** : exécuter au besoin une commande par soit même 
 - **echanger avec intruder** : vous pouvez poser des questions
 - **faire un résumé de votre session** : 
