@@ -21,7 +21,7 @@ Rules:
 10. Remember you just need to provide the next step.
 11. Use sudo if needed.
 
-Here's the existing messages between you and the pentester {chat_history} what is the next step
+what is the next step. this is the history {chat_history}
 
 """
 
@@ -66,6 +66,8 @@ Rules:
     11. every command use a single ip address
     12. the only port flag you must use is -p- or --top-ports
 """
+
+
 RECONNAISSANCE_PASSIVE_PROMPT = """
 As a pentesting expert, you will explain how to perform passive reconnaissance using a server IP address.
 

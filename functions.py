@@ -125,10 +125,13 @@ def start_task(task, session_name):
             except KeyboardInterrupt:
                 print(f"\n\n\n{Colors.OTHER_OUTPUT}Byeeeee :){Colors.RESET}")
                 break
+            except mistralai.exceptions.mistralAPIException:
+                print("tokens limits reached or apikey expired")
         history_chat += chat_history
         save_history(session_name)
     except KeyboardInterrupt:
         sys.exit()
+    #AJOUTER les exceptions pour 
 
 
 
@@ -179,7 +182,7 @@ def execute_action(command):
 
 def include_command(thought):
         
-    prompt = f"An AI assitant is helping a penetration tester work on his job. At each iteration, the AI gives the penetration tester some ideas for him to try. At some point, the AI gives the human the following response\n\nResponse: '{thought}'\n\n Determine if there's any command line code that can be executed in the response. \n\n Is there any command line code that can be executed in the response? Respond 'yes' if there is, respond 'no' there's no clear command line code in the response. Give me a clear 'yes' or 'no', don't say additional words."
+    prompt = f"An AI assitant is helping a penetration tester work on his job. At each iteration, the AI gives the penetration tester some ideas for him to try. At some point, the AI gives the human the following response\n\nResponse: '{thought}'\n\n Determine if there's any command line code that can be executed in the response. \n\n Is there any command line code that can be executed in the response? like curl comand or any other bash command Respond 'yes' if there is, respond 'no' there's no clear command line code in the response. Give me a clear 'yes' or 'no', don't say additional words."
 
     model = "open-mixtral-8x22b"
     client = MistralClient(api_key=API_KEY)
@@ -227,3 +230,5 @@ def task_accomplished(task):
         return True
     elif "no" in response.lower():
         return False
+
+        

