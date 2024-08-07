@@ -11,7 +11,6 @@ def main():
 
     print(ascii_art)
     print(intruder_man)
-    print(utilite)
     parser = argparse.ArgumentParser(description='input output')
     parser.add_argument("session_name", type=str, help='Give da pentest session a name')
     args = parser.parse_args()

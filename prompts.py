@@ -123,6 +123,6 @@ HELP
             /quit: to close intruder
             /resume: each time you use this command Intruder will summarize the information collected so far
             /ask: ask to ask every think else event if it is not about the pentest
-            /run: you can run a command using intruder
+            /terminal: enter in terminalMode (you can execute a command by your own)
 
 """

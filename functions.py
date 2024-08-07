@@ -5,6 +5,7 @@ import json
 from prompts import *
 
 import os, sys
+from mistralai.exceptions import MistralException
 from mistralai.client import MistralClient
 from mistralai.models.chat_completion import ChatMessage
 import shlex
@@ -12,7 +13,7 @@ import shlex
 import ipaddress
 
 
-API_KEY = "vxQ2cTx3mDPLWS9xT3P5vcoJzaOAJLZy"
+API_KEY = "tAjecZNYTo0nyGH6sLdaKFTi6UxWDH6z"
 MISTRAL_CLIENT = MistralClient(api_key=API_KEY)
 
 history_chat = []
@@ -21,7 +22,7 @@ BUILDIN_COMMAND ={
     "/RESUME",
     "/QUIT",
     "/ASK",
-    "/RUN"
+    "/TERMINAL"
 }
 
 #pour décorer le code
@@ -61,11 +62,16 @@ def buidling_command(command, session_name):
     if (command == "/QUIT"):
         print(f"\n\n\n{Colors.OTHER_OUTPUT}Byeeeee :){Colors.RESET}")
         sys.exit()
-    if (command == "/RUN"):
-        command = input("Input an command to execute : ")
-        command_output = execute_action(command)
-        print(f"\n\n{Colors.OS_OUTPUT}{command} output:\n{command_output}{Colors.RESET}")
-        history_chat.append({"role": "tool", "content": f"{command} output : {command_output}"})
+    if (command == "/TERMINAL"):
+        while True:
+            try:
+                command = input("\n\tintruder-term > ")
+                command_output = execute_action(command)
+                print(f"\n\n\t\t{Colors.OS_OUTPUT}{command} output:\n{command_output}{Colors.RESET}")
+                history_chat.append({"role": "tool", "content": f"{command} output : {command_output}"})
+            except KeyboardInterrupt:
+                break
+
         
 
 
@@ -110,6 +116,7 @@ def start_task(task, session_name):
                     print(f"{Colors.USER_INPUT}Trying to execute: {output}{Colors.RESET}")
                     command_output = execute_action(output)
                     chat_history.append({"role": "tool", "content": f"{output} output : {command_output}"})
+                    history_chat.append({"role": "tool", "content": f"{output} output : {command_output}"})
                     
                     if task_accomplished(task):
                         print(f"\n\n{Colors.OS_OUTPUT}{output} output:\n{command_output}{Colors.RESET}")
@@ -125,9 +132,10 @@ def start_task(task, session_name):
             except KeyboardInterrupt:
                 print(f"\n\n\n{Colors.OTHER_OUTPUT}Byeeeee :){Colors.RESET}")
                 break
-            except mistralai.exceptions.mistralAPIException:
-                print("tokens limits reached or apikey expired")
-        history_chat += chat_history
+            except MistralException as e:
+                print(f"Erreur API : {e}")
+                break
+        
         save_history(session_name)
     except KeyboardInterrupt:
         sys.exit()
