@@ -18,21 +18,18 @@ Bienvenue dans **INTRUDER**, un outil puissant conçu pour vous assister dans le
 
 ## 🧠 Technologie Utilisée
 
-Pour le moment, **INTRUDER** utilise **LLaMA3:8B**. Notez que **LLaMA3** n'a pas encore été spécifiquement fine-tuné pour les pentests.
+Pour le moment, **INTRUDER** utilise MistralAI. Notez que les modèles de MistralAI utilisés ne sont pas  fine-tuné pour les pentests.
 
-Le projet utilise également les technologies suivantes :
-- **C++** : Pour les performances et l'efficacité dans les tâches critiques.
-- **Python** : Pour sa flexibilité et sa richesse en bibliothèques pour le pentesting.
-- **LangChain** : Pour integer l'IA
-- **Ollama**: Pour faire tourner le LLM en local
+Le projet est fait en python
 
 ---
 
 ## 🎯 Fonctionnalités
 
-- **Analyse Passive** : Collecte d'informations et planification stratégique.
-- **Actions Actives** : Exécution des tests et exploitation des vulnérabilités identifiées.
-- **Feedback en Temps Réel** : Analyse continue des résultats pour ajustement instantané.
+- **from prompt to action** : interprète les demandes de l'utilisateur en action (exécuter un commandes)
+- **executer une commandes** : exécuter au besoin une commande par soit même 
+- **echanger avec intruder** : vous pouvez poser des questions
+- **faire un résumé de votre session** : 
 
 ---
 
