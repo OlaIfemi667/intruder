@@ -69,6 +69,7 @@ def buidling_command(command, session_name):
                 command_output = execute_action(command)
                 print(f"\n\n\t\t{Colors.OS_OUTPUT}{command} output:\n{command_output}{Colors.RESET}")
                 history_chat.append({"role": "tool", "content": f"{command} output : {command_output}"})
+                save_history
             except KeyboardInterrupt:
                 break
 
@@ -151,8 +152,9 @@ def save_history(session_name):
         json.dump(history_chat, file, indent=4)
 
 def add_task(task):
-    global chat_history
+    global chat_history, history_chat
     chat_history.append({"role": "user", "content" : task})
+    history_chat.append({"role": "user", "content" : task})
 
 def generate_path_for_task(task):
     return ask_mistral(AI_MAIN_PURPOSE, task)
