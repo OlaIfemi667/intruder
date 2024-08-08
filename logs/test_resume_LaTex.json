@@ -1,0 +1,14 @@
+[
+    {
+        "role": "user",
+        "content": "/terminal"
+    },
+    {
+        "role": "tool",
+        "content": "ping -c 4 localhost output : PING localhost (::1) 56 octets de donn\u00e9es\n64\u00a0octets de localhost (::1)\u00a0: icmp_seq=1 ttl=64 temps=0.017\u00a0ms\n64\u00a0octets de localhost (::1)\u00a0: icmp_seq=2 ttl=64 temps=0.050\u00a0ms\n64\u00a0octets de localhost (::1)\u00a0: icmp_seq=3 ttl=64 temps=0.061\u00a0ms\n64\u00a0octets de localhost (::1)\u00a0: icmp_seq=4 ttl=64 temps=0.077\u00a0ms\n\n--- statistiques ping localhost ---\n4\u00a0paquets transmis, 4 re\u00e7us, 0% packet loss, time 3036ms\nrtt min/avg/max/mdev = 0.017/0.051/0.077/0.022 ms\n"
+    },
+    {
+        "role": "tool",
+        "content": "nmap localhost output : Starting Nmap 7.95 ( https://nmap.org ) at 2024-08-08 14:14 WAT\nNmap scan report for localhost (127.0.0.1)\nHost is up (0.000061s latency).\nOther addresses for localhost (not scanned): ::1\nrDNS record for 127.0.0.1: lilith.ola\nAll 1000 scanned ports on localhost (127.0.0.1) are in ignored states.\nNot shown: 1000 closed tcp ports (conn-refused)\n\nNmap done: 1 IP address (1 host up) scanned in 0.05 seconds\n"
+    }
+]

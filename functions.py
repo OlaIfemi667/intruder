@@ -58,6 +58,7 @@ def buidling_command(command, session_name):
             model="mistral-small",
             messages=[ChatMessage(role="system", content=AI_ANALYSE), ChatMessage(role="user", content="do resume with all important information discovered in a well structure test")]
         )
+        resume_in_LaTex(session_name, chat_response.choices[0].message.content)
         return chat_response.choices[0].message.content
     if (command == "/QUIT"):
         print(f"\n\n\n{Colors.OTHER_OUTPUT}Byeeeee :){Colors.RESET}")
@@ -257,4 +258,13 @@ def task_accomplished(task):
     elif "no" in response.lower():
         return False
 
-        
+
+def resume_in_LaTex(session_name, resume):
+    resume_latex = ask_mistral("You will write the following report in latex format that can be compiled using Overleaf or TeXmaker", resume)
+    
+    report_file = f"reports/{session_name}.tex"
+    
+    with open(report_file, 'w') as file:
+        file.write(resume_latex)
+    
+    print(f"Resume written to {report_file}")

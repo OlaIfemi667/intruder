@@ -1,0 +1,34 @@
+Certainly! Below is the LaTeX code for the report:
+
+```latex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\title{Reconnaissance Phase Report}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This report summarizes the main information discovered and tasks performed during the reconnaissance phase based on the terminal input and output provided.
+
+\section{Ping Sweep}
+A ping sweep was performed on localhost using the command \texttt{ping -c 4 localhost}. The output shows that all 4 ICMP packets were transmitted and received, with no packet loss, indicating that the localhost is up and running.
+
+\begin{itemize}
+    \item \textbf{Timestamp:} 2024-08-08 14:14 WAT
+    \item \textbf{Target:} localhost
+    \item \textbf{Result:} Localhost is up, with no packet loss.
+\end{itemize}
+
+\end{document}
+```
+
+You can copy and paste this code into Overleaf or TeXmaker to compile the report. This LaTeX document includes a title, author, date, and sections for the introduction and ping sweep details. The `\texttt` command is used to format the terminal command in a monospaced font, and the `itemize` environment is used to list the details of the ping sweep.

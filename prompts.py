@@ -121,7 +121,7 @@ HELP
             intruder will respond by performing it
         *there some buildin command that intruder understand
             /quit: to close intruder
-            /resume: each time you use this command Intruder will summarize the information collected so far
+            /resume: each time you use this command Intruder will summarize the information collected so far, it also create a file {session_name}.tex so your can get the report in pdf format
             /ask: ask to ask every think else event if it is not about the pentest
             /terminal: enter in terminalMode (you can execute a command by your own)
 
