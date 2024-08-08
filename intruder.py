@@ -28,6 +28,8 @@ def main():
 
             
             task = input("Pentest-AI>")
+            if (len(task.split()) == 0):
+                continue
             add_task(task)
             if task.strip().upper() in BUILDIN_COMMAND:
                 print(f"{Colors.AI_OUTPUT}{buidling_command(task.strip().upper(), session_name)}{Colors.RESET}")

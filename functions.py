@@ -66,10 +66,11 @@ def buidling_command(command, session_name):
         while True:
             try:
                 command = input("\n\tintruder-term > ")
+                if (len(command.split()) == 0 ):
+                    continue
                 command_output = execute_action(command)
-                print(f"\n\n\t\t{Colors.OS_OUTPUT}{command} output:\n{command_output}{Colors.RESET}")
                 history_chat.append({"role": "tool", "content": f"{command} output : {command_output}"})
-                save_history
+                save_history(session_name)
             except KeyboardInterrupt:
                 break
 
@@ -120,11 +121,9 @@ def start_task(task, session_name):
                     history_chat.append({"role": "tool", "content": f"{output} output : {command_output}"})
                     
                     if task_accomplished(task):
-                        print(f"\n\n{Colors.OS_OUTPUT}{output} output:\n{command_output}{Colors.RESET}")
                         print(f"{Colors.AI_OUTPUT}Task accomplished{Colors.RESET}")
                         break
                     else:
-                        print(command_output)
                         print(f"{Colors.AI_OUTPUT}Task not accomplished. WAIT!!!!!\n{Colors.RESET}")
                     
                 else:
@@ -171,23 +170,40 @@ def extract_command(output):
     return chat_response.choices[0].message.content
 
 
+
 def execute_action(command):
-
-
+    print(f"Exécution de la commande : {command}")
     
     try:
         args = shlex.split(command)
-
-        result = subprocess.run(args, capture_output=True, text=True, check=True) # je doute a mettre un time out a cause des potentiels nmap qu'il pourrait y avoir
         
+        # Initialisation des variables pour stocker la sortie complète
+        full_output = ""
+        error_output = ""
 
-        return result.stdout
+        # Utilisation de subprocess.Popen pour capturer et afficher la sortie en temps réel
+        print(f"{Colors.OS_OUTPUT}")
+        with subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True) as process:
+            for line in process.stdout:
+                print(line)# Affiche chaque ligne de la sortie en temps réel
+                full_output += line  # Stocke chaque ligne dans la variable full_output
+            stdout, stderr = process.communicate()  # Capture la sortie complète
+
+            full_output += stdout  # Ajoute la sortie standard complète à full_output
+            error_output += stderr  # Ajoute la sortie d'erreur à error_output
+
+            if process.returncode != 0:
+                print(stderr)  # Affiche les erreurs si la commande échoue
+        print(f"{Colors.RESET}")
+        return full_output if process.returncode == 0 else full_output + error_output
+
     except subprocess.TimeoutExpired:
         return "temps expiré"
-    except subprocess.CalledProcessError as e:            
-            return e.stdout + e.stderr
+    except subprocess.CalledProcessError as e:
+        return e.stdout + e.stderr
     except Exception as e:
-            return str(e)
+        return str(e)
+
 
 
 def include_command(thought):

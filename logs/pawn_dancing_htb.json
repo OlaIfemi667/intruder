@@ -1,0 +1,30 @@
+[
+    {
+        "role": "user",
+        "content": "/terminal"
+    },
+    {
+        "role": "tool",
+        "content": "ping -c 4 10.129.97.22 output : PING 10.129.97.22 (10.129.97.22) 56(84) octets de donn\u00e9es.\n64\u00a0octets de 10.129.97.22\u00a0: icmp_seq=1 ttl=127 temps=158\u00a0ms\n64\u00a0octets de 10.129.97.22\u00a0: icmp_seq=2 ttl=127 temps=183\u00a0ms\n64\u00a0octets de 10.129.97.22\u00a0: icmp_seq=3 ttl=127 temps=205\u00a0ms\n64\u00a0octets de 10.129.97.22\u00a0: icmp_seq=4 ttl=127 temps=126\u00a0ms\n\n--- statistiques ping 10.129.97.22 ---\n4\u00a0paquets transmis, 4 re\u00e7us, 0% packet loss, time 3002ms\nrtt min/avg/max/mdev = 126.194/168.072/205.221/29.330 ms\n"
+    },
+    {
+        "role": "user",
+        "content": "do a reconnaissance on machine 10.129.97.22"
+    },
+    {
+        "role": "user",
+        "content": "/resume"
+    },
+    {
+        "role": "user",
+        "content": "/terminal "
+    },
+    {
+        "role": "user",
+        "content": "search for service and their version on port 135 and 445 on machine 10.129.97.22"
+    },
+    {
+        "role": "tool",
+        "content": "sudo nmap -sV -p 135,445 10.129.97.22 output : Starting Nmap 7.95 ( https://nmap.org ) at 2024-08-08 10:42 WAT\nNmap scan report for 10.129.97.22\nHost is up (0.17s latency).\n\nPORT    STATE SERVICE       VERSION\n135/tcp open  msrpc         Microsoft Windows RPC\n445/tcp open  microsoft-ds?\nService Info: OS: Windows; CPE: cpe:/o:microsoft:windows\n\nService detection performed. Please report any incorrect results at https://nmap.org/submit/ .\nNmap done: 1 IP address (1 host up) scanned in 19.39 seconds\n"
+    }
+]
