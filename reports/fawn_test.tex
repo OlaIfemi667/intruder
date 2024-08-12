@@ -1,0 +1,47 @@
+Certainly! Below is the LaTeX code for the report that you described. You can compile this code using Overleaf or TeXmaker.
+
+```latex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{Pentest Reconnaissance Report}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This report summarizes the findings from the reconnaissance phase of the pentest conducted on the target machine.
+
+\section{Main Information Discovered}
+During the reconnaissance phase, the following main information was discovered:
+
+\begin{enumerate}
+    \item The target machine (10.129.43.111) is up and running.
+    \item Ping sweep results show that the machine is responsive with an average response time of 185.050 ms.
+    \item Nmap scan revealed that the following ports are open:
+    \begin{itemize}
+        \item Port 21: FTP service (vsftpd 3.0.3) is running.
+    \end{itemize}
+    \item After establishing an FTP connection to the target machine, we discovered a file named 'flag.txt' with the content '035db21c881520061c53e0536e44f815'.
+\end{enumerate}
+
+\section{Main Tasks Performed}
+The main tasks performed during this phase include:
+
+\begin{enumerate}
+    \item Performing a ping sweep to check the target machine's availability.
+    \item Conducting an Nmap scan to identify open ports and services.
+    \item Connecting to the FTP service and retrieving the 'flag.txt' file.
+\end{enumerate}
+
+\section{Next Steps}
+The next steps in the pentest would be to further explore the open FTP service and other potential vulnerabilities to gain more access to the target machine.
+
+\end{document}
+```
+
+You can copy and paste this code into your LaTeX editor to compile and view the report.

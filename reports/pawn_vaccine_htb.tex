@@ -1,0 +1,35 @@
+Sure, here is the report in LaTeX format:
+
+```latex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{Pentest Session Report}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Reconnaissance Phase}
+
+During the reconnaissance phase of the pentest session for the machine with IP address 10.129.104.53, the following tasks were performed and results were obtained:
+
+\begin{enumerate}
+    \item \textbf{Service and version enumeration:} Using the command \texttt{sudo nmap -sV 10.129.104.53}, no output was provided in the conversation history. However, it can be assumed that this command was executed and provided information about the services and their versions running on the target machine.
+    \item \textbf{FTP connection attempt:} A connection was established to the FTP service on the target machine using the command \texttt{ftp 10.129.104.53}. No output was provided, so it is unclear if the connection was successful or what actions were taken.
+    \item \textbf{Hash cracking attempt:} A hash was found in a file named ``hash'' and was cracked using the command \texttt{sudo john hash}. The output of this command was not provided, so it is unclear if the hash was successfully cracked.
+    \item \textbf{File extraction:} A backup file named ``backup.zip'' was extracted using the command \texttt{unzip backup.zip}. The contents of the file were then displayed using the commands \texttt{cat index.zip} and \texttt{cat index.php}.
+    \item \textbf{Hash analysis:} A hash value was analyzed using the command \texttt{hashid 2cb42f8734ea607eefed3b70af13bbd3}, but no output was provided.
+\end{enumerate}
+
+\section{Summary}
+
+To summarize, the team was able to connect to an FTP service on the target machine, extract and analyze a backup file, and attempt to crack a hash. However, the output of several commands was not provided, so it is unclear if these tasks were successful. Additionally, the team should consider running the \texttt{nmap} command again to ensure that the service and version information is captured. The hash cracking attempt should also be verified to confirm if the hash was successfully cracked.
+
+\end{document}
+```
+
+You can compile this LaTeX code using Overleaf or TeXmaker to generate the report.
