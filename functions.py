@@ -176,35 +176,24 @@ def execute_action(command):
     print(f"Exécution de la commande : {command}")
     
     try:
-        args = shlex.split(command)
-        
-        # Initialisation des variables pour stocker la sortie complète
+        args = command
+
         full_output = ""
         error_output = ""
 
-        # Utilisation de subprocess.Popen pour capturer et afficher la sortie en temps réel
         print(f"{Colors.OS_OUTPUT}")
-        with subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True) as process:
-            for line in process.stdout:
-                print(line)# Affiche chaque ligne de la sortie en temps réel
-                full_output += line  # Stocke chaque ligne dans la variable full_output
-            stdout, stderr = process.communicate()  # Capture la sortie complète
-
-            full_output += stdout  # Ajoute la sortie standard complète à full_output
-            error_output += stderr  # Ajoute la sortie d'erreur à error_output
-
-            if process.returncode != 0:
-                print(stderr)  # Affiche les erreurs si la commande échoue
-        print(f"{Colors.RESET}")
-        return full_output if process.returncode == 0 else full_output + error_output
+        with subprocess.Popen(args, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True) as process:
+            for line in process.stdout:  
+                full_output += line 
+                print(line, end="")
+            print(f"{Colors.RESET}")
+            return full_output
+        
 
     except subprocess.TimeoutExpired:
         return "temps expiré"
     except subprocess.CalledProcessError as e:
         return e.stdout + e.stderr
-    except Exception as e:
-        return str(e)
-
 
 
 def include_command(thought):
