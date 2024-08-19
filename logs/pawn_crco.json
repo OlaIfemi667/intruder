@@ -1,0 +1,6 @@
+[
+    {
+        "role": "user",
+        "content": "perform a reconnaissance on machine 10.129.1.15"
+    }
+]

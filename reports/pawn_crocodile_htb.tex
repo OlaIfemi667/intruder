@@ -1,0 +1,47 @@
+Certainly! Below is the LaTeX code for the report you described. You can compile this using Overleaf or TeXmaker.
+
+```latex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Pentest Report for Machine 10.129.1.15}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Reconnaissance Phase}
+
+During the reconnaissance phase of the pentest on machine 10.129.1.15, the following information was discovered:
+
+\begin{enumerate}
+    \item The machine is running a vulnerable version of vsftpd (3.0.3) on port 21 and Apache httpd 2.4.41 on port 80.
+    \item The FTP server allows anonymous access, and the following usernames were found in the allowed.userlist file: "aron", "pwnmeow", "negotisticalsw", and "admin". The corresponding passwords were found in the allowed.userlist.passwd file.
+    \item The web server has several directories, including /assets, /css, /dashboard, /fonts, /js, and /dashboard/vendor, some of which are potentially listable.
+    \item The /dashboard directory contains a /.git directory, which may contain sensitive information about the web application's source code and version control history.
+    \item The /dashboard directory also contains an index.php file, which returns a 302 status code, indicating that it may be redirecting to another location.
+\end{enumerate}
+
+\section{Tasks Performed}
+
+Based on the above information, the following tasks were performed:
+
+\begin{enumerate}
+    \item A port scan was conducted using Nmap to identify open ports and services on the target machine.
+    \item Anonymous FTP login was attempted, and several usernames and passwords were discovered in the allowed.userlist and allowed.userlist.passwd files.
+    \item Directory brute-forcing was conducted using DirB to identify potential directories and files on the web server.
+    \item The contents of the discovered directories and files were analyzed for potential vulnerabilities and sensitive information.
+\end{enumerate}
+
+\section{Future Tasks}
+
+Future tasks could include exploiting any identified vulnerabilities, further analyzing the web application's source code, and conducting additional testing on the discovered user accounts.
+
+\end{document}
+```
+
+You can copy this code into a `.tex` file and compile it using Overleaf or TeXmaker to generate the report.
